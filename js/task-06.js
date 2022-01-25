@@ -1,7 +1,13 @@
 const inputField = document.querySelector('#validation-input');
 
 const blurOff = (event) => {
-    if (event.currentTarget.value.length == inputField.dataset.length) {
+
+    const inputValue = event.currentTarget.value.length;    
+    const requiredValue = inputField.dataset.length;
+    console.log(typeof (event.currentTarget.value.length))
+    console.log(typeof (inputField.dataset.length))
+
+    if (inputValue === Number(requiredValue)) {
         inputField.classList.add('valid');
         inputField.classList.remove('invalid');
     }
@@ -12,4 +18,3 @@ const blurOff = (event) => {
 }
 inputField.addEventListener('blur', blurOff);
 
-console.log(inputField.event)
